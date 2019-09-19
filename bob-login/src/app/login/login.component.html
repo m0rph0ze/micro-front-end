@@ -1,0 +1,42 @@
+<section id="login-wrapper">
+<h1 id="title">Bob the builder</h1>
+<h2>Zaloguj się do aplikacji</h2>
+<form [formGroup]="loginForm" #ngForm="ngForm" (ngSubmit)="logIn(loginForm, ngForm, userData)">
+    <div id="input-section">
+        <div id="login-input-wrapper" class="input-wrapper">
+            <input 
+                id="login-input"
+                [ngClass]="{'input-error': loginForm.get('login').touched && (loginForm.get('login').hasError('minlength') || loginForm.get('login').hasError('required'))}"  
+                placeholder="Login" 
+                type="text" 
+                formControlName="login"
+            >        
+            <div class="input-error-text" *ngIf="loginForm.get('login').touched && loginForm.get('login').hasError('minlength')">Zbyt krótki login</div>
+            <div class="input-error-text" *ngIf="loginForm.get('login').touched && loginForm.get('login').hasError('required')">Login jest wymagany</div>        
+            
+        </div>
+        <div id="password-input-wrapper" class="input-wrapper">
+            <input 
+                id="password-input"
+                [ngClass]="{'input-error': loginForm.get('password').touched && (loginForm.get('password').hasError('minlength') || loginForm.get('password').hasError('required'))}" 
+                placeholder="Hasło" 
+                type="password" 
+                formControlName="password"
+            >
+            <div class="input-error-text" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('minlength')">Zbyt krótkie hasło</div>
+            <div class="input-error-text" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">Hasło jest wymagane</div>
+        </div>
+    </div>
+    <div id="buttons-wrapper">
+        <div class="button-wrapper">
+            <button id="login-button" type="submit" class="button primary">Zaloguj się</button>
+        </div>
+        <div class="button-wrapper">
+            <button id="create-account-button" type="button" class="button secondary">Utwórz konto</button>
+        </div>
+    </div>
+    <div id="info" class="info info-error" *ngIf="ngForm.submitted && !userData">
+        <p class="info-error-content">Brak użytkownika lub błędne dane</p>
+    </div>
+</form>
+</section>

@@ -1,0 +1,19 @@
+{
+    "users": [
+        {
+            "login": "jan.k",
+            "password": "123qwe",
+            "id": 1
+        },
+        {
+            "login": "piotr.z",
+            "password": "qweasd",
+            "id": 2
+        },
+        {
+            "login": "ula.c",
+            "password": "asdzxc",
+            "id": 3
+        }
+    ]
+}
