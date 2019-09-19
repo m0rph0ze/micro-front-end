@@ -1,0 +1,21 @@
+{
+  "name": "micro-front-end",
+  "version": "0.0.0",
+  "description": "micro-front-end POC",
+  "main": "index.js",
+  "repository": "https://github.com/ilicc/micro-front-end",
+  "author": "billennium.com",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "runDB": "json-server --watch ./server/db.json",
+    "start:Login": "npx serve -l 5005 ./bob-login/",
+    "start:Wrapper": "npx serve -l 5000 ./bob-wrapper/",
+    "start": "npm run runDB & npm run start:Login & npm run start:Wrapper"
+  },
+  "devDependencies": {
+    "json-server": "^0.15.1",
+    "npx": "^10.2.0",
+    "serve-json": "^1.0.3"
+  }
+}
