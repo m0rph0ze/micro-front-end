@@ -1,6 +1,8 @@
 # BobLogin
 
-1. npm i serve json-server
-2. json-server --watch .\server\db.json
-3. npx serve -l 5005 .\bob-login\
-4. npx serve -l 5000 .\bob-wrapper\
+1. `npm install` - install all dependencies
+2. `npm run start` - run `json-server` and all nx apps (`bob-login` and `bob-wrapper`)
+
+To start only `bob-login`: `npm run start:Login`
+To start only `bob-wrapper`: `npm run start:Wrapper`
+To start only simple Json server: `npm run runDB`
